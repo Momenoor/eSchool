@@ -39,7 +39,6 @@ return [
             'table' => 'jobs',
             'queue' => 'default',
             'retry_after' => 90,
-            'after_commit' => false,
         ],
 
         'beanstalkd' => [
@@ -47,46 +46,25 @@ return [
             'host' => 'localhost',
             'queue' => 'default',
             'retry_after' => 90,
-            'block_for' => 0,
-            'after_commit' => false,
         ],
 
         'sqs' => [
             'driver' => 'sqs',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'key' => env('SQS_KEY', 'your-public-key'),
+            'secret' => env('SQS_SECRET', 'your-secret-key'),
             'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
-            'queue' => env('SQS_QUEUE', 'default'),
-            'suffix' => env('SQS_SUFFIX'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'after_commit' => false,
+            'queue' => env('SQS_QUEUE', 'your-queue-name'),
+            'region' => env('SQS_REGION', 'us-east-1'),
         ],
 
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
-            'queue' => env('REDIS_QUEUE', 'default'),
+            'queue' => 'default',
             'retry_after' => 90,
             'block_for' => null,
-            'after_commit' => false,
         ],
 
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Job Batching
-    |--------------------------------------------------------------------------
-    |
-    | The following options configure the database and table that store job
-    | batching information. These options can be updated to any database
-    | connection and table which has been defined by your application.
-    |
-    */
-
-    'batching' => [
-        'database' => env('DB_CONNECTION', 'mysql'),
-        'table' => 'job_batches',
     ],
 
     /*
@@ -101,7 +79,6 @@ return [
     */
 
     'failed' => [
-        'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
         'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
     ],

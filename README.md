@@ -1,66 +1,123 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## **Laravel School Management System** 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**LAVSMS** is developed for educational institutions like schools and colleges built on Laravel 8
 
-## About Laravel
+**SCREENSHOTS** 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Dashboard**
+<img src="https://i.ibb.co/D4T0z6T/dashboard.png" alt="dashboard" border="0">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Login**
+<img src="https://i.ibb.co/Rh1Bfwk/login.png" alt="login" border="0">
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Student Marksheet**
+<img src="https://i.ibb.co/GCgv5ZR/marksheet.png" alt="marksheet" border="0">
 
-## Learning Laravel
+**System Settings**
+<img src="https://i.ibb.co/Kmrhw69/system-settings.png" alt="system-settings" border="0">
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Print Marksheet**
+<div style="clear: both"> </div>
+<img src="https://i.ibb.co/5c1GHCj/capture-20210530-115521-crop.png" alt="print-marksheet">
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Print Tabulation Sheet & Marksheet**
+<img src="https://i.ibb.co/QmscPfn/capture-20210530-115802.png" alt="tabulation-sheet" border="0">
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<hr />  
 
-## Laravel Sponsors
+There are 7 types of user accounts. They include:
+ 
+Administrators (Super Admin & Admin)
+- Librarian
+- Accountant
+- Teacher
+- Student
+- Parent
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Requirements** 
 
-### Premium Partners
+Check Laravel 8 Requirements https://laravel.com/docs/8.x
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Installation**
+- Install dependencies (composer install)
+- Set Database Credentials & App Settings in dotenv file (.env)
+- Migrate Database (php artisan migrate)
+- Database seed (php artisan db:seed)
 
-## Contributing
+**Login Credentials**
+After seeding. Login details as follows:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Account Type  | Username | Email | Password |
+| ------------- | -------- | ----- | -------- |
+| Super Admin | cj | cj@cj.com | cj |
+|  Admin | admin | admin@admin.com | cj |
+|  Teacher | teacher | teacher@teacher.com | cj |
+|  Parent | parent | parent@parent.com | cj |
+|  Accountant | accountant | accountant@accountant.com | cj |
+|  Student | student | student@student.com | cj |
 
-## Code of Conduct
+#### **FUNCTIONS OF ACCOUNTS** 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**-- SUPER ADMIN**
+- Only Super Admin can delete any record
+- Create any user account
+ 
+**-- Administrators (Super Admin & Admin)**
 
-## Security Vulnerabilities
+- Manage students class/sections
+- View marksheet of students
+- Create, Edit and manage all user accounts & profiles
+- Create, Edit and manage Exams & Grades
+- Create, Edit and manage Subjects
+- Manage noticeboard of school
+- Notices are visible in calendar in dashboard
+- Edit system settings
+- Manage Payments & fees
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**-- ACCOUNTANT**
+- Manage Payments & fees
+- Print Payment Receipts
 
-## License
+**-- LIBRARIAN**
+- Manage Books in the Library
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**-- TEACHER**
+- Manage Own Class/Section
+- Manage Exam Records for own Subjects
+- Manage Timetable if Assigned as Class Teacher
+- Manage own profile
+- Upload Study Materials
+
+**-- STUDENT**
+- View teacher profile
+- View own class subjects
+- View own marks and class timetable
+- View Payments
+- View library and book status
+- View noticeboard and school events in calendar
+- Manage own profile
+
+**-- PARENT**
+- View teacher profile
+- View own child's marksheet (Download/Print PDF)
+- View own child's Timetable
+- View own child's payments
+- View noticeboard and school events in calendar
+- Manage own profile
+
+### **Contributing**
+
+Your Contributions & suggestions are welcomed. Please use Pull Request
+
+### **Security Vulnerabilities**
+
+If you discover a security vulnerability within LAV_SMS, please send an e-mail to CJ Inspired via cjay.pub@gmail.com. All security vulnerabilities will be promptly addressed.
+
+***Please Note*** that some sections of this project are in the work-in-progress stage and would be updated soon. These include:
+
+- The Noticeboard/Calendar in the Dashboard Area
+- Librarian/Acountant user pages
+- Library Resources/Study Materials Upload for Students
+
+### **Contact [CJ INSPIRED]**
+- Phone : +2347068149559
